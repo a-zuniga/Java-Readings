@@ -28,6 +28,16 @@ public class findMax {
         return arr[maxIndex];
     }
 
+    public static Comparable findMax(Comparable[] arr) {
+        int maxIndex = 0;
+        for (int i =1; i<arr.length; i++){
+            if(arr[i].compareTo(arr[maxIndex]) > 0){
+                maxIndex = i;
+            }
+        }
+        return arr[maxIndex];
+    }
+
     public static void main(String[] args) {
 
         // Tester for BigInteger fidMax()
@@ -47,5 +57,19 @@ public class findMax {
                 "Zuchini",
                 "Xavier",};
         System.out.println("Largest lexicographical value: " + findMax(testArrayString));
+
+        // Tester for generic Comparable findMax()
+        Integer [] test = {
+                3,
+                2,
+                8,
+                123,
+                98,
+                12,
+                999
+        };
+        System.out.println("Largest value in INT array: " + findMax(test));
     }
+
+
 }
